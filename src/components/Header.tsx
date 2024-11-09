@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <header className="h-16 flex justify-between px-5 items-center aspect-auto">
-      <Image src={"/Logo-temporal.png"} alt="Bronx" width={100} height={50} />
+      <Image src={"/Bronx-negro.png"} alt="Bronx" width={100} height={50} />
 
       <ul className="hidden">
         <li>SERVICES</li>
@@ -33,7 +33,8 @@ export default function Header() {
           {" "}
           <path d="M4 6l16 0" />
           <path d="M4 12l16 0" />
-          <path d="M4 18l16 0" />{" "}
+          <path d="M4 18l16 0" />
+          {" "}
         </svg>
       </button>
 

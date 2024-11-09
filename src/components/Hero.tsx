@@ -42,9 +42,13 @@ export default function Hero() {
           delivery of the vehicle to your region.
         </p>
 
-        <button className="block mx-auto border-solid border-2 border-blueDesing rounded w-[75%] h-16">
+        <button className="block mt-5 mx-auto border-solid border-2 border-blueDesing rounded-full w-[75%] h-16">
           MAKE AN APPLICATION
         </button>
+
+        <h2 className="font-bold text-5xl text-center mt-10 text-black">
+          Service
+        </h2>
       </section>
     </>
   );
