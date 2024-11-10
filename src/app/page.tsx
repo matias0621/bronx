@@ -1,3 +1,4 @@
+import Contact from "@/components/Contact";
 import ContainerService from "@/components/ContainerService";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <ContainerService />
       <HeroSection />
+      <Contact />
     </>
   );
 }
