@@ -5,11 +5,11 @@ export default function HeroSection() {
     <>
       <section className="background-overlay text-white">
         <div className="relative text-white text-center p-5 z-10">
-          <h1 className="text-5xl mb-4">
+          <h1 className="text-5xl mb-4 sm:text-start sm:text-3xl sm:w-[70%]">
             The team THE CAR is located directly in Germany, in the city of
             Berlin.
           </h1>
-          <p>
+          <p className="sm:text-start sm:text-xs sm:w-[70%] sm:mt-8">
             This allows us to swiftly process your orders and locate the best
             cars in the shortest possible time. We simplify the complex process
             of buying a car in Germany to make it as convenient as possible for

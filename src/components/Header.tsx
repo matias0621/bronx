@@ -6,7 +6,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="h-16 flex justify-between px-5 items-center aspect-auto">
+    <header className="h-16 flex justify-between px-5 items-center aspect-auto relative z-10">
       <Image src={"/Bronx-negro.png"} alt="Bronx" width={100} height={50} />
 
       <ul className="hidden">
@@ -40,10 +40,7 @@ export default function Header() {
 
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-blueDesing
-        transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-500
-        `}
+        transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-500 z-20`}
       >
         <button onClick={() => setIsOpen(!isOpen)}>
           <svg
@@ -57,10 +54,8 @@ export default function Header() {
             strokeWidth="1.25"
           >
             {" "}
-            <path d="M18 6l-12 12">
-            </path>
-            <path d="M6 6l12 12">
-            </path>
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
             {" "}
           </svg>
         </button>

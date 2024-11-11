@@ -1,11 +1,11 @@
 export default function Contact() {
   return (
     <>
-      <h1 className="text-center text-5xl text-blueDesing font-semibold">
+      <h1 className="text-center text-5xl mt-4 text-blueDesing font-semibold">
         Contacts
       </h1>
 
-      <section className="bg-blueDesing text-white text-center rounded-2xl mx-4 flex flex-col gap-y-4 p-4">
+      <section className="bg-blueDesing text-white mt-4 text-center rounded-2xl mx-4 flex flex-col gap-y-4 p-4 sm:mx-12">
         <section className="flex flex-col gap-y-4">
           <div className="text-2xl">
             <h3>VEHICLE</h3>
