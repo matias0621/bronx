@@ -6,20 +6,22 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="h-16 flex justify-between px-5 items-center aspect-auto relative z-10">
+    <header className="h-16 flex justify-between px-5 items-center aspect-auto relative z-10
+    md:h-20
+    ">
       <Image src={"/Bronx-negro.png"} alt="Bronx" width={100} height={50} />
 
-      <ul className="hidden">
-        <li>SERVICES</li>
-        <li>ABOUT US</li>
-        <li>PRICE</li>
-        <li>FAQ</li>
-        <li>BLOG</li>
-        <li>CONTACTS</li>
-        <li>UKR</li>
+      <ul className="hidden text-[.8rem] text-blueDesing lg:flex">
+        <li className="mx-2">SERVICES</li>
+        <li className="mx-2">ABOUT US</li>
+        <li className="mx-2">PRICE</li>
+        <li className="mx-2">FAQ</li>
+        <li className="mx-2">BLOG</li>
+        <li className="mx-2">CONTACTS</li>
+        <li className="mx-2 text-white bg-blueDesing px-2 rounded-lg text-[0.7rem] flex justify-center items-center">UKR</li>
       </ul>
 
-      <button onClick={() => setIsOpen(!isOpen)}>
+      <button className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
         <svg
           width={40}
           height={40}

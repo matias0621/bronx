@@ -8,7 +8,7 @@ export default function ImageCarPreFooter() {
             alt="" 
             width={400}
             height={400} 
-            className="block mx-auto rounded-xl mb-4 sm:w-[95%]"
+            className="block mx-auto rounded-xl mb-4 sm:w-[95%] object-cover"
             />
         </>
     )

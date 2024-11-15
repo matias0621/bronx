@@ -2,7 +2,7 @@ import Service from "@/components/Service";
 
 export default function ContainerService() {
   return (
-    <section className="">
+    <section className="lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:w-[95%] lg:mx-auto">
       <Service
         Title="Airport transfers"
         Description="With additional wait time and flight tracking in case of delays, our service is optimized to make every airport transfer a breeze."
