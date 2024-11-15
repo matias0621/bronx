@@ -6,9 +6,9 @@ export default function Contact() {
       </h1>
 
       <section className="bg-blueDesing text-white mt-4 text-center rounded-2xl mx-4 flex flex-col gap-y-4 p-4 sm:mx-12   
-        lg:flex-row lg:gap-x-8 lg:justify-between       
+        lg:flex-row lg:gap-x-8 lg:justify-between lg:h-80 lg:rounded-[3rem] lg:p-10       
        ">
-        <section className="flex flex-col gap-y-4 lg:w-[50%] lg:items-start">
+        <section className="flex flex-col gap-y-4 lg:w-[50%] lg:gap-y-14">
           <div className="text-2xl lg:text-start">
             <h3>VEHICLE</h3>
             <h3>ORDER FORM</h3>
@@ -20,15 +20,26 @@ export default function Contact() {
             <p>We will process your request and contact you.</p>
           </div>
         </section>
-        <section className="flex flex-col gap-y-4 w-[50%]">
-          <div className="lg:text-start">
+        <section className="flex flex-col gap-y-4 lg:w-[50%] lg:gap-y-10">
+          <div className="lg:text-start lg:w-[60%]">
             If you have already found a car and would like us to inspect it,
             simply contact us through <span className="underline">WhatsApp</span>.
           </div>
 
-          <form method="post" className="flex flex-col gap-y-4">
-            <input type="text" placeholder="Name" className="w-full bg-transparent border-solid border-white border-[1px] h-10 rounded-lg px-2" />
-            <input type="text" inputMode="numeric" className="w-full bg-transparent border-solid border-white border-[1px] h-10 rounded-lg px-2" placeholder="Contacts for communication" />
+          <form method="post" className="flex flex-col gap-y-4 lg:w-[80%]">
+            <input type="text" 
+            placeholder="Name" 
+            className="w-full bg-transparent border-solid
+            border-white border-[1px] h-10 rounded-lg px-2 
+            lg:h-14 lg:rounded-3xl lg:pl-8
+            " />
+            <input type="text" 
+            inputMode="numeric" 
+            className="w-full bg-transparent border-solid
+            border-white border-[1px] h-10 rounded-lg px-2
+            lg:h-14 lg:rounded-3xl lg:pl-8                      
+            " 
+            placeholder="Contacts for communication" />
           </form>
         </section>
       </section>

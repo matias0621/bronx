@@ -23,7 +23,7 @@ export default function Hero() {
         </h1>
 
         {/* Contenedor para la imagen con ajuste de posición */}
-        <div className="relative mt-[-8%] sm:mt-[-6%] md:mt-[-5%] lg:mt-[-4.7%]">
+        <div className="relative mt-[-2.2rem] sm:mt-[-2.4rem] md:mt-[-2.5rem] lg:mt-[-3rem]">
 
           <Image
             src={"/Auto-Hero.png"}
@@ -32,7 +32,7 @@ export default function Hero() {
             height={400}
             className="
             lg:w-[65%]
-            lg:h-56
+            lg:h-64
             relative 
             left-1/2
             transform
