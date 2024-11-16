@@ -1,39 +1,37 @@
 "use client"
-import { useRef, useState } from 'react';
+import { useState } from "react";
 
 export default function Contact() {
-  const nameRef = useRef<HTMLInputElement>(null);
-  const numberRef = useRef<HTMLInputElement>(null);
-  const [message, setMessage] = useState('');
+  const [formData, setFormData] = useState({ name: "", number: "" });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-    const name = nameRef.current?.value;
-    const number = numberRef.current?.value;
+  const handleKeyDown = async (e: React.KeyboardEvent<HTMLFormElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Evita que el formulario se envíe automáticamente.
+      if (formData.name && formData.number) {
+        try {
+          const response = await fetch("/api/sends", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
 
-    if (!name || !number) {
-      setMessage('Please fill out all fields.');
-      return;
-    }
-
-    try {
-      const response = await fetch('/api/sends', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, number }),
-      });
-
-      if (response.ok) {
-        setMessage('Form submitted successfully!');
-        if (nameRef.current) nameRef.current.value = '';
-        if (numberRef.current) numberRef.current.value = '';
+          if (response.ok) {
+            alert("Mensaje enviado exitosamente.");
+            setFormData({ name: "", number: "" }); // Limpia el formulario.
+          } else {
+            alert("Error al enviar el mensaje.");
+          }
+        } catch (error) {
+          console.error("Error al enviar el formulario:", error);
+        }
       } else {
-        setMessage('Failed to submit the form. Please try again.');
+        alert("Por favor, completa ambos campos.");
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setMessage('An error occurred. Please try again later.');
     }
   };
 
@@ -42,7 +40,6 @@ export default function Contact() {
       <h1 className="text-center text-5xl mt-4 text-blueDesing font-semibold">
         Contacts
       </h1>
-
       <section className="bg-blueDesing text-white mt-4 text-center rounded-2xl mx-4 flex flex-col gap-y-4 p-4 sm:mx-12   
         lg:flex-row lg:gap-x-8 lg:justify-between lg:h-80 lg:rounded-[3rem] lg:p-10       
        ">
@@ -51,7 +48,6 @@ export default function Contact() {
             <h3>VEHICLE</h3>
             <h3>ORDER FORM</h3>
           </div>
-
           <div className="lg:text-start">
             <p>Please fill out the vehicle order form.</p>
             <p>This will help us to speed up the search for your vehicle.</p>
@@ -64,36 +60,29 @@ export default function Contact() {
             simply contact us through <span className="underline">WhatsApp</span>.
           </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-y-4 lg:w-[80%]">
+          <form
+            method="post"
+            className="flex flex-col gap-y-4 lg:w-[80%]"
+            onKeyDown={handleKeyDown}
+          >
             <input
               type="text"
               name="name"
               placeholder="Name"
-              ref={nameRef}
-              className="w-full bg-transparent border-solid
-              border-white border-[1px] h-10 rounded-lg px-2 
-              lg:h-14 lg:rounded-3xl lg:pl-8"
-              required
+              value={formData.name}
+              onChange={handleInputChange}
+              className="w-full bg-transparent border-solid border-white border-[1px] h-10 rounded-lg px-2 lg:h-14 lg:rounded-3xl lg:pl-8"
             />
             <input
               type="text"
               name="number"
-              placeholder="Contacts for communication"
-              ref={numberRef}
               inputMode="numeric"
-              className="w-full bg-transparent border-solid
-              border-white border-[1px] h-10 rounded-lg px-2
-              lg:h-14 lg:rounded-3xl lg:pl-8" 
-              required
+              value={formData.number}
+              onChange={handleInputChange}
+              className="w-full bg-transparent border-solid border-white border-[1px] h-10 rounded-lg px-2 lg:h-14 lg:rounded-3xl lg:pl-8"
+              placeholder="Contacts for communication"
             />
-            <button
-              type="submit"
-              className="bg-white text-blueDesing font-semibold py-2 rounded-lg lg:rounded-3xl"
-            >
-              Submit
-            </button>
           </form>
-          {message && <p>{message}</p>}
         </section>
       </section>
     </>
