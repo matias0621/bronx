@@ -1,3 +1,4 @@
+import Carousel from "@/components/Carousel";
 import Contact from "@/components/Contact";
 import ContainerService from "@/components/ContainerService";
 import Footer from "@/components/Footer";
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <Hero />
       <ContainerService />
+      <Carousel />
       <HeroSection />
       <Contact />
       <Slider />

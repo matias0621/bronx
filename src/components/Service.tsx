@@ -11,7 +11,7 @@ export default function Service({ Title, Description, Photo }: ServiceProps) {
     <section
       className="flex flex-col items-center py-4 mx-auto bg-greyDesing w-4/5 rounded-xl my-4 sm:w-[90%] sm:h-60 sm:p-0 sm:flex-row"
     >
-      <div className="relative w-4/5 h-[38vh] aspect-w-16 aspect-h-9 sm:w-1/2 sm:h-4/5 sm:ml-4 sm:my-0
+      <div className="relative w-4/5 h-[25vh] aspect-w-16 aspect-h-9 sm:w-1/2 sm:h-4/5 sm:ml-4 sm:my-0
       lg:w-[45%]
       ">
         <Image
