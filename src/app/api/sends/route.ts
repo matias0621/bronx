@@ -10,7 +10,7 @@ export async function POST(request: Request) {
       const datosForm: dataBody = await request.json();
       console.log(datosForm);
   
-      const { data, error }: any = await resend.emails.send({
+      const { data, error } = await resend.emails.send({
         from: 'onboarding@resend.dev',
         to: ["cuentadeprueba0621@gmail.com"],
         subject: 'Nuevo cliente para Bronx',
