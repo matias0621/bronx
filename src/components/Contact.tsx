@@ -1,4 +1,42 @@
+"use client"
+import { useRef, useState } from 'react';
+
 export default function Contact() {
+  const nameRef = useRef<HTMLInputElement>(null);
+  const numberRef = useRef<HTMLInputElement>(null);
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const name = nameRef.current?.value;
+    const number = numberRef.current?.value;
+
+    if (!name || !number) {
+      setMessage('Please fill out all fields.');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/sends', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, number }),
+      });
+
+      if (response.ok) {
+        setMessage('Form submitted successfully!');
+        if (nameRef.current) nameRef.current.value = '';
+        if (numberRef.current) numberRef.current.value = '';
+      } else {
+        setMessage('Failed to submit the form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setMessage('An error occurred. Please try again later.');
+    }
+  };
+
   return (
     <>
       <h1 className="text-center text-5xl mt-4 text-blueDesing font-semibold">
@@ -26,21 +64,36 @@ export default function Contact() {
             simply contact us through <span className="underline">WhatsApp</span>.
           </div>
 
-          <form method="post" className="flex flex-col gap-y-4 lg:w-[80%]">
-            <input type="text" 
-            placeholder="Name" 
-            className="w-full bg-transparent border-solid
-            border-white border-[1px] h-10 rounded-lg px-2 
-            lg:h-14 lg:rounded-3xl lg:pl-8
-            " />
-            <input type="text" 
-            inputMode="numeric" 
-            className="w-full bg-transparent border-solid
-            border-white border-[1px] h-10 rounded-lg px-2
-            lg:h-14 lg:rounded-3xl lg:pl-8                      
-            " 
-            placeholder="Contacts for communication" />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-y-4 lg:w-[80%]">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              ref={nameRef}
+              className="w-full bg-transparent border-solid
+              border-white border-[1px] h-10 rounded-lg px-2 
+              lg:h-14 lg:rounded-3xl lg:pl-8"
+              required
+            />
+            <input
+              type="text"
+              name="number"
+              placeholder="Contacts for communication"
+              ref={numberRef}
+              inputMode="numeric"
+              className="w-full bg-transparent border-solid
+              border-white border-[1px] h-10 rounded-lg px-2
+              lg:h-14 lg:rounded-3xl lg:pl-8" 
+              required
+            />
+            <button
+              type="submit"
+              className="bg-white text-blueDesing font-semibold py-2 rounded-lg lg:rounded-3xl"
+            >
+              Submit
+            </button>
           </form>
+          {message && <p>{message}</p>}
         </section>
       </section>
     </>
