@@ -64,7 +64,7 @@ const CoverflowCarousel = () => {
               <p className="text-sm lg:mb-12">{testimonial.position}</p>
               <div className="overflow-hidden text-ellipsis h-40">
 
-                <p className="text-lg">"{testimonial.quote}"</p>
+                <p className="text-lg">{testimonial.quote}</p>
               </div>
             </div>
           </SwiperSlide>
