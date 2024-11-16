@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HeroSection from "@/components/HeroSection";
 import ImageCarPreFooter from "@/components/ImageCarPreFooter";
-import Service from "@/components/Service";
 import Slider from "@/components/Slider";
 
 export default function Home() {
