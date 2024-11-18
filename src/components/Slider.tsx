@@ -32,19 +32,19 @@ export default function Slider() {
                 </div>
 
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
             </section>
         </section>
