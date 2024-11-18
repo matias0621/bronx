@@ -8,27 +8,27 @@ export default function Slider() {
         <section className="slider">
             <section className="slide-track">
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
                 <div className="slide">
-                    <Image src={"/Bronx-negro.png"} alt="" width={350} height={350} />
+                    <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
                 <div className="slide">
