@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="relative mt-[-2.2rem] sm:mt-[-2.4rem] md:mt-[-2.5rem] lg:mt-[-3rem]">
 
           <Image
-            src={"/Auto-Hero.png"}
+            src={"/Auto-Hero-transformed.webp"}
             alt="Auto"
             width={500}
             height={400}

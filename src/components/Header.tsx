@@ -9,7 +9,7 @@ export default function Header() {
     <header className="h-16 flex justify-between px-5 items-center aspect-auto relative z-10
     md:h-20
     ">
-      <Image src={"/Bronx-negro.png"} alt="Bronx" width={100} height={50} />
+      <Image src={"/Bronx-negro.webp"} alt="Bronx" width={100} height={50} />
 
       <ul className="hidden text-[.8rem] text-blueDesing lg:flex">
         <li className="mx-2">SERVICES</li>

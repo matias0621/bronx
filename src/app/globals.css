@@ -19,3 +19,8 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+
+.car-animation{
+  transform: translateX(100%);
+}
