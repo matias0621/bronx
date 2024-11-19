@@ -42,7 +42,7 @@ export default function Header() {
 
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-blueDesing
-        transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-500 z-20`}
+        transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-500 z-50`}
       >
         <button onClick={() => setIsOpen(!isOpen)}>
           <svg

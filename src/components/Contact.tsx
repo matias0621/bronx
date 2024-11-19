@@ -1,5 +1,7 @@
-"use client"
+"use client";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", number: "" });
@@ -21,22 +23,24 @@ export default function Contact() {
           });
 
           if (response.ok) {
-            alert("Mensaje enviado exitosamente.");
+            toast.success("Mensaje enviado exitosamente.");
             setFormData({ name: "", number: "" }); // Limpia el formulario.
           } else {
-            alert("Error al enviar el mensaje.");
+            toast.error("Error al enviar el mensaje.");
           }
         } catch (error) {
           console.error("Error al enviar el formulario:", error);
+          toast.error("Hubo un problema con el envío.");
         }
       } else {
-        alert("Por favor, completa ambos campos.");
+        toast.warn("Por favor, completa ambos campos.");
       }
     }
   };
 
   return (
     <>
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar />
       <h1 className="text-center text-5xl mt-4 text-blueDesing font-semibold">
         Contacts
       </h1>
