@@ -12,11 +12,11 @@ import Slider from "@/components/Slider";
 export default function Home() {
   return (
     <>
+      <Header />
       <FadeInComponent>
-        <Header />
         <Hero />
       </FadeInComponent>
-
+      
       <FadeInComponent>
         <ContainerService />
       </FadeInComponent>

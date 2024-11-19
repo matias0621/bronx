@@ -52,7 +52,7 @@ export default function Hero() {
 
         <button className="block mt-5 mx-auto border-solid border-2
          border-blueDesing rounded-full w-[75%] h-16 sm:w-[50%]
-         md:w-[38%] md:h-14 lg:w-[25%]
+         md:w-[38%] md:h-14 lg:w-[25%] hover:bg-blueDesing hover:text-white duration-500
          ">
           MAKE AN APPLICATION
         </button>

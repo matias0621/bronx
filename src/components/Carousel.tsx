@@ -32,7 +32,7 @@ const testimonials = [
 
 const CoverflowCarousel = () => {
   return (
-    <div className="w-full my-8 mx-auto">
+    <div id="about" className="w-full my-8 mx-auto">
       <Swiper
         effect="coverflow"
         grabCursor={true}

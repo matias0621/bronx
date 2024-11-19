@@ -11,30 +11,28 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleKeyDown = async (e: React.KeyboardEvent<HTMLFormElement>) => {
-    if (e.key === "Enter") {
-      e.preventDefault(); // Evita que el formulario se envíe automáticamente.
-      if (formData.name && formData.number) {
-        try {
-          const response = await fetch("/api/sends", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-          });
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Evita el comportamiento predeterminado del formulario.
+    if (formData.name && formData.number) {
+      try {
+        const response = await fetch("/api/sends", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
 
-          if (response.ok) {
-            toast.success("Mensaje enviado exitosamente.");
-            setFormData({ name: "", number: "" }); // Limpia el formulario.
-          } else {
-            toast.error("Error al enviar el mensaje.");
-          }
-        } catch (error) {
-          console.error("Error al enviar el formulario:", error);
-          toast.error("Hubo un problema con el envío.");
+        if (response.ok) {
+          toast.success("Mensaje enviado exitosamente.");
+          setFormData({ name: "", number: "" }); // Limpia el formulario.
+        } else {
+          toast.error("Error al enviar el mensaje.");
         }
-      } else {
-        toast.warn("Por favor, completa ambos campos.");
+      } catch (error) {
+        console.error("Error al enviar el formulario:", error);
+        toast.error("Hubo un problema con el envío.");
       }
+    } else {
+      toast.warn("Por favor, completa ambos campos.");
     }
   };
 
@@ -67,7 +65,8 @@ export default function Contact() {
           <form
             method="post"
             className="flex flex-col gap-y-4 lg:w-[80%]"
-            onKeyDown={handleKeyDown}
+            onSubmit={handleSubmit}
+            id="contact"
           >
             <input
               type="text"
@@ -86,6 +85,12 @@ export default function Contact() {
               className="w-full bg-transparent border-solid border-white border-[1px] h-10 rounded-lg px-2 lg:h-14 lg:rounded-3xl lg:pl-8"
               placeholder="Contacts for communication"
             />
+            <button
+              type="submit"
+              className="bg-white text-blueDesing h-10 rounded-lg px-4 lg:h-14 lg:rounded-3xl lg:pl-8 lg:hidden"
+            >
+              Submit
+            </button>
           </form>
         </section>
       </section>

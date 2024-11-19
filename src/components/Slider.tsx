@@ -11,39 +11,39 @@ export default function Slider() {
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
-                <div className="slide">
+                <div className="slide h-[84px]">
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
-                <div className="slide">
+                <div className="slide h-[84px]">
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
-                <div className="slide">
+                <div className="slide h-[84px]">
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
-                <div className="slide">
+                <div className="slide h-[84px]">
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
-                <div className="slide">
+                <div className="slide h-[84px]">
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
-                <div className="slide">
+                <div className="slide h-[84px]">
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
-                <div className="slide">
+                <div className="slide h-[84px]">
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
-                <div className="slide">
+                <div className="slide h-[84px]">
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
 
-                <div className="slide">
+                <div className="slide h-[84px]">
                     <Image src={"/Bronx-negro.webp"} alt="" width={350} height={350} />
                 </div>
             </section>
